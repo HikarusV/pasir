@@ -53,8 +53,8 @@ class AccountProv extends ChangeNotifier {
       // print('cekBro : ${userData!.emailVerified}');
       userData!.sendEmailVerification();
       // userData?.updateDisplayName(name);
-    } on FirebaseAuthException catch (e) {
-      print(e.code);
+    } on FirebaseAuthException {
+      // print(e.code);
     }
   }
 

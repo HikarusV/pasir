@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pasir/common/firestore/firestore_handler.dart';
 import 'package:pasir/main.dart';
-import 'package:pasir/presentation/pages/home_page.dart';
 import 'package:pasir/presentation/provider/auth_provider.dart';
 import 'package:pasir/presentation/widget/input_text.dart';
 import 'package:pasir/presentation/widget/password_field.dart';
@@ -25,6 +23,7 @@ class _LoginPagesState extends State<LoginPages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xff82C5BE),
       body: Stack(
         children: [
@@ -45,23 +44,23 @@ class _LoginPagesState extends State<LoginPages> {
               margin: const EdgeInsets.symmetric(horizontal: 40),
               child: Column(
                 children: [
-                  StrokeText(
+                  const StrokeText(
                     size: 22,
                     text: 'LOGIN',
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
                   InputText(
                     controller: email,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 24,
                   ),
                   PasswordField(
                     controller: password,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 31,
                   ),
                   ButtonCustom(

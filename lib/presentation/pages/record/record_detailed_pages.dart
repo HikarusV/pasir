@@ -3,7 +3,6 @@ import 'package:pasir/presentation/widget/button_custom.dart';
 import 'package:pasir/presentation/widget/stroke_text.dart';
 
 import '../../../data/model/cow.dart';
-import '../../../data/model/diagnosa.dart';
 
 class RecordDetailedPages extends StatelessWidget {
   const RecordDetailedPages({Key? key, required this.cowData})
@@ -13,6 +12,7 @@ class RecordDetailedPages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xff82C5BE),
       body: Container(
         margin: const EdgeInsets.symmetric(

@@ -13,6 +13,7 @@ class DiagnosaDetailedPages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xff82C5BE),
       body: Container(
         margin: const EdgeInsets.symmetric(

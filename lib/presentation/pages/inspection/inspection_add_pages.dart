@@ -36,6 +36,7 @@ class _InspectionAddPagesState extends State<InspectionAddPages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xff82C5BE),
       body: Container(
         margin: const EdgeInsets.symmetric(
@@ -64,7 +65,7 @@ class _InspectionAddPagesState extends State<InspectionAddPages> {
                     hintText: '50531',
                     controller: controller[9],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowInputs(
@@ -72,7 +73,7 @@ class _InspectionAddPagesState extends State<InspectionAddPages> {
                     hintText: 'White Brahman',
                     controller: controller[0],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowInputs(
@@ -80,7 +81,7 @@ class _InspectionAddPagesState extends State<InspectionAddPages> {
                     hintText: 'A',
                     controller: controller[1],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowInputs(
@@ -88,7 +89,7 @@ class _InspectionAddPagesState extends State<InspectionAddPages> {
                     hintText: 'Betina',
                     controller: controller[2],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowInputs(
@@ -96,7 +97,7 @@ class _InspectionAddPagesState extends State<InspectionAddPages> {
                     hintText: '700',
                     controller: controller[3],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowInputs(
@@ -104,7 +105,7 @@ class _InspectionAddPagesState extends State<InspectionAddPages> {
                     hintText: '5',
                     controller: controller[4],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowInputs(
@@ -112,7 +113,7 @@ class _InspectionAddPagesState extends State<InspectionAddPages> {
                     hintText: '8',
                     controller: controller[5],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowInputs(
@@ -120,7 +121,7 @@ class _InspectionAddPagesState extends State<InspectionAddPages> {
                     hintText: 'A10',
                     controller: controller[6],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowInputs(
@@ -128,7 +129,7 @@ class _InspectionAddPagesState extends State<InspectionAddPages> {
                     hintText: 'D1',
                     controller: controller[7],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowInputs(
@@ -136,14 +137,14 @@ class _InspectionAddPagesState extends State<InspectionAddPages> {
                     hintText: 'Nafsu Makan',
                     controller: controller[8],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowDateInputs(
                       titleText: 'Tanggal Masuk',
                       hintText: '',
                       dateTime: dateTime),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                 ],

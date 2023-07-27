@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pasir/presentation/pages/inspection/inspection_add_pages.dart';
+import 'package:pasir/presentation/pages/profile_pages.dart';
 import 'package:pasir/presentation/provider/cow_provider.dart';
 import 'package:pasir/presentation/widget/cow_card.dart';
 import 'package:pasir/presentation/widget/stroke_text.dart';
@@ -25,6 +26,7 @@ class _InspectionPagesState extends State<InspectionPages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xff82C5BE),
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 30),
@@ -33,16 +35,19 @@ class _InspectionPagesState extends State<InspectionPages> {
             const SizedBox(
               height: 70,
             ),
-            const Row(
+            Row(
               children: [
-                Icon(
-                  Icons.house,
-                  size: 26,
+                GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: const Icon(
+                    Icons.house,
+                    size: 26,
+                  ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 4,
                 ),
-                StrokeText(
+                const StrokeText(
                   text: 'CATATAN PEMERIKSAAN',
                   size: 16,
                 ),
@@ -100,21 +105,29 @@ class _InspectionPagesState extends State<InspectionPages> {
                 const SizedBox(
                   width: 8,
                 ),
-                Container(
-                  width: 38,
-                  height: 38,
-                  padding: const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(90),
-                    image: const DecorationImage(
-                      image: AssetImage('assets/images/icon2.png'),
-                      // fit: BoxFit.fitHeight,
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProfilePages(),
                     ),
-                    border: Border.all(
-                        width: 3,
-                        color: const Color(0xFF2A6265),
-                        strokeAlign: BorderSide.strokeAlignOutside),
+                  ),
+                  child: Container(
+                    width: 38,
+                    height: 38,
+                    padding: const EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(90),
+                      image: const DecorationImage(
+                        image: AssetImage('assets/images/icon2.png'),
+                        // fit: BoxFit.fitHeight,
+                      ),
+                      border: Border.all(
+                          width: 3,
+                          color: const Color(0xFF2A6265),
+                          strokeAlign: BorderSide.strokeAlignOutside),
+                    ),
                   ),
                 ),
               ],

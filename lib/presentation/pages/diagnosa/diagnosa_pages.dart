@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pasir/presentation/pages/inspection/inspection_add_pages.dart';
 import 'package:pasir/presentation/widget/cow_card.dart';
-import 'package:pasir/presentation/widget/icons_custom.dart';
 import 'package:pasir/presentation/widget/stroke_text.dart';
 import 'package:provider/provider.dart';
 
 import '../../../data/model/cow.dart';
 import '../../provider/cow_provider.dart';
+import '../profile_pages.dart';
 import 'diagnosa_detailed_pages.dart';
 
 class DiagnosaPages extends StatelessWidget {
@@ -15,6 +14,7 @@ class DiagnosaPages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xff82C5BE),
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 30),
@@ -23,16 +23,19 @@ class DiagnosaPages extends StatelessWidget {
             const SizedBox(
               height: 70,
             ),
-            const Row(
+            Row(
               children: [
-                Icon(
-                  Icons.house,
-                  size: 26,
+                GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: const Icon(
+                    Icons.house,
+                    size: 26,
+                  ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 4,
                 ),
-                StrokeText(
+                const StrokeText(
                   text: 'DIAGNOSA KESEHATAN',
                   size: 16,
                 ),
@@ -77,21 +80,29 @@ class DiagnosaPages extends StatelessWidget {
                 const SizedBox(
                   width: 24,
                 ),
-                Container(
-                  width: 38,
-                  height: 38,
-                  padding: const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(90),
-                    image: const DecorationImage(
-                      image: AssetImage('assets/images/icon2.png'),
-                      // fit: BoxFit.fitHeight,
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProfilePages(),
                     ),
-                    border: Border.all(
-                        width: 3,
-                        color: const Color(0xFF2A6265),
-                        strokeAlign: BorderSide.strokeAlignOutside),
+                  ),
+                  child: Container(
+                    width: 38,
+                    height: 38,
+                    padding: const EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(90),
+                      image: const DecorationImage(
+                        image: AssetImage('assets/images/icon2.png'),
+                        // fit: BoxFit.fitHeight,
+                      ),
+                      border: Border.all(
+                          width: 3,
+                          color: const Color(0xFF2A6265),
+                          strokeAlign: BorderSide.strokeAlignOutside),
+                    ),
                   ),
                 ),
               ],
@@ -100,15 +111,18 @@ class DiagnosaPages extends StatelessWidget {
             Container(),
             // GAP Notification
             Consumer<CowProvider>(builder: (context, value, child) {
-              if (value.cowState == ResultState.hasData) {
+              List<Cow> data = List.from(value.cowDataList);
+
+              data.removeWhere((element) => element.diagnosa != null);
+
+              if (value.cowState == ResultState.hasData && data.isNotEmpty) {
                 return ListView.builder(
                   shrinkWrap: true,
-                  itemCount: value.cowDataList.length,
+                  itemCount: data.length,
                   itemBuilder: (context, index) {
                     return CowCard(
-                      targetPages: DiagnosaDetailedPages(
-                          cowData: value.cowDataList[index]),
-                      cowData: value.cowDataList[index],
+                      targetPages: DiagnosaDetailedPages(cowData: data[index]),
+                      cowData: data[index],
                     );
                   },
                 );
@@ -126,7 +140,7 @@ class DiagnosaPages extends StatelessWidget {
                     child: Text('Ada Yang Tidak Beres'),
                   ),
                 );
-              } else if (value.cowState == ResultState.noData) {
+              } else if (value.cowState == ResultState.noData || data.isEmpty) {
                 return const Padding(
                   padding: EdgeInsets.only(top: 50),
                   child: Center(

@@ -6,7 +6,6 @@ import 'package:pasir/presentation/widget/row_input_area.dart';
 import 'package:provider/provider.dart';
 
 import '../../provider/cow_provider.dart';
-import '../../widget/row_date_input.dart';
 import '../../widget/row_input.dart';
 import '../../widget/snackbar_error.dart';
 import '../../widget/stroke_text.dart';
@@ -26,6 +25,7 @@ class _DiagnosaAddPagesState extends State<DiagnosaAddPages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xff82C5BE),
       body: Container(
         margin: const EdgeInsets.symmetric(

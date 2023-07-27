@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:firebase_database/firebase_database.dart';
 import 'package:pasir/data/model/diagnosa.dart';
 
@@ -64,15 +62,15 @@ class FirestoreHandler {
         bufferData.addAll(
             toObjectMap(key, value, stringValue: (key.toString() == 'id')));
       });
-      for (String i in bufferData.keys) {
-        print(i);
-      }
+      // for (String i in bufferData.keys) {
+      //   print(i);
+      // }
       buffer.add(Cow.fromMap(bufferData));
-      print('end parse');
+      // print('end parse');
     });
 
-    print(buffer[0].id);
-    print(buffer[0].type);
+    // print(buffer[0].id);
+    // print(buffer[0].type);
     return buffer;
   }
 

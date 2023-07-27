@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pasir/main.dart';
 import 'package:pasir/presentation/pages/diagnosa/diagnosa_pages.dart';
 import 'package:pasir/presentation/pages/profile_pages.dart';
 import 'package:pasir/presentation/pages/record/record_pages.dart';
-import 'package:pasir/presentation/widget/button_custom.dart';
 import 'package:pasir/presentation/widget/icons_custom.dart';
 
 import '../widget/stroke_text.dart';
@@ -15,6 +13,7 @@ class HomePages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xff82C5BE),
       body: Stack(
         children: [

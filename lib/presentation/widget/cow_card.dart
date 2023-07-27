@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pasir/presentation/pages/inspection/inspection_detailed_pages.dart';
 
 import '../../data/model/cow.dart';
 

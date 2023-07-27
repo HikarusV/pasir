@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pasir/main.dart';
 import 'package:pasir/presentation/provider/auth_provider.dart';
 import 'package:pasir/presentation/widget/button_custom.dart';
 import 'package:provider/provider.dart';
@@ -9,6 +10,7 @@ class ProfilePages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xff82C5BE),
       body: Container(
         alignment: Alignment.center,
@@ -38,8 +40,8 @@ class ProfilePages extends StatelessWidget {
               height: 41,
             ),
             Text(
-              'FullName',
-              style: TextStyle(fontSize: 20, color: Colors.white),
+              handler.email,
+              style: const TextStyle(fontSize: 20, color: Colors.white),
             ),
             Container(
               height: 1,
@@ -51,8 +53,8 @@ class ProfilePages extends StatelessWidget {
               height: 12,
             ),
             Text(
-              'Job',
-              style: TextStyle(fontSize: 20, color: Colors.white),
+              handler.userId,
+              style: const TextStyle(fontSize: 20, color: Colors.white),
             ),
             Container(
               height: 1,
@@ -60,14 +62,14 @@ class ProfilePages extends StatelessWidget {
               margin: const EdgeInsets.only(top: 14),
               color: Colors.black,
             ),
-            SizedBox(
+            const SizedBox(
               height: 64,
             ),
             ButtonCustom(
               text: 'Kembali',
               onTap: () => Navigator.pop(context),
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
             ButtonCustom(

@@ -16,6 +16,7 @@ class InspectionDetailedPages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xff82C5BE),
       body: Container(
         margin: const EdgeInsets.symmetric(
@@ -288,7 +289,7 @@ class InspectionDetailedPages extends StatelessWidget {
                         elevation: 0,
                         backgroundColor: Colors.transparent,
                         alignment: Alignment.center,
-                        child: Container(
+                        child: SizedBox(
                           height: 120,
                           width: 250,
                           child: Stack(
@@ -322,7 +323,7 @@ class InspectionDetailedPages extends StatelessWidget {
                                         Navigator.pop(context);
                                       },
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 15,
                                     ),
                                     ButtonCustom(

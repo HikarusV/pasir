@@ -57,6 +57,7 @@ class _InspectionEditedPagesState extends State<InspectionEditedPages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xff82C5BE),
       body: Container(
         margin: const EdgeInsets.symmetric(
@@ -95,7 +96,7 @@ class _InspectionEditedPagesState extends State<InspectionEditedPages> {
                     hintText: widget.cowData.type,
                     controller: controller[0],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowInputs(
@@ -103,7 +104,7 @@ class _InspectionEditedPagesState extends State<InspectionEditedPages> {
                     hintText: widget.cowData.grade,
                     controller: controller[1],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowInputs(
@@ -111,7 +112,7 @@ class _InspectionEditedPagesState extends State<InspectionEditedPages> {
                     hintText: widget.cowData.gender,
                     controller: controller[2],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowInputs(
@@ -119,7 +120,7 @@ class _InspectionEditedPagesState extends State<InspectionEditedPages> {
                     hintText: widget.cowData.weight.toString(),
                     controller: controller[3],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowInputs(
@@ -127,7 +128,7 @@ class _InspectionEditedPagesState extends State<InspectionEditedPages> {
                     hintText: widget.cowData.age.toString(),
                     controller: controller[4],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowInputs(
@@ -135,7 +136,7 @@ class _InspectionEditedPagesState extends State<InspectionEditedPages> {
                     hintText: widget.cowData.arrival.toString(),
                     controller: controller[5],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowInputs(
@@ -143,7 +144,7 @@ class _InspectionEditedPagesState extends State<InspectionEditedPages> {
                     hintText: widget.cowData.placeNumber.toString(),
                     controller: controller[6],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowInputs(
@@ -151,7 +152,7 @@ class _InspectionEditedPagesState extends State<InspectionEditedPages> {
                     hintText: widget.cowData.hospitalId,
                     controller: controller[7],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowInputs(
@@ -159,14 +160,14 @@ class _InspectionEditedPagesState extends State<InspectionEditedPages> {
                     hintText: widget.cowData.disease,
                     controller: controller[8],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   RowDateInputs(
                       titleText: 'Tanggal Masuk',
                       hintText: '',
                       dateTime: dateTime),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                 ],

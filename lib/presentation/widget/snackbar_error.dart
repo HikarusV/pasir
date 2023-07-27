@@ -23,7 +23,7 @@ void snackbarSuccess(
     SnackBar(
       content: Text(message),
       duration: Duration(seconds: duration),
-      backgroundColor: Color(0xff2A6265),
+      backgroundColor: const Color(0xff2A6265),
     ),
   );
 }
