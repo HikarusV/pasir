@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1060715684554",
+    "firebase_url": "https://pasir-2b001-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "pasir-2b001",
+    "storage_bucket": "pasir-2b001.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1060715684554:android:218295ca151dea77610a33",
+        "android_client_info": {
+          "package_name": "com.pasirtengah.pasir"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1060715684554-bii6dac2jn9ji5rcq9nqeu4rncu428t4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMVZfcSHKpxk4ReUgMkd-7_JkT9wj55zk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1060715684554-bii6dac2jn9ji5rcq9nqeu4rncu428t4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
